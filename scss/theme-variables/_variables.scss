@@ -1,0 +1,113 @@
+
+@font-face {
+    font-family: 'PP Eiko';
+    src: url('fonts/PPEiko-Light.woff2') format('woff2'),
+        url('fonts/PPEiko-Light.woff') format('woff'),
+        url('fonts/PPEiko-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Calibri';
+    src: url('fonts/Calibri-Light.woff2') format('woff2'),
+        url('fonts/Calibri-Light.woff') format('woff'),
+        url('fonts/Calibri-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Eiko';
+    src: url('fonts/PPEiko-Regular.woff2') format('woff2'),
+        url('fonts/PPEiko-Regular.woff') format('woff'),
+        url('fonts/PPEiko-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+
+/*fonts*/
+
+$font-family-base          :'Calibri', serif;////
+$font-family-secondary     :'PP Eiko', serif;////
+$base-body-color           :#fff;////
+
+
+
+$base-font-size             :20px;////
+$base-font-color            :#5e5e5d;////
+$base-font-title            :#1d1d1d;////
+
+
+
+$navbar-color               :#122c50;//
+
+$cl-navbar-underine         :#10365a;
+
+$cl-navbar-light            :#10365a;
+$cl-navbar-dark             :#fff;
+$cl_white                   :#fff;
+$cl-highlite                :#1f5a92;
+$cl-gray                    :#9c9c9c;
+
+$body-color                 :#fff;
+
+$bg_white                   :#fff;
+$bg-alice-blue              :#f5faff;
+$bg-lapis-lapuli            :#1f5a92;
+$bg-snow                    :#f5faff;
+
+$bg-blue                    :#1d314b;///
+$bg-footer                  :$bg-blue;///
+$bg-lightgray               :#f7f6f5;
+
+
+
+$cl-btn-primary             :#101d30;
+$cl-btn-secondary           :#1f5a92;
+$cl-btn-light               :#fff;
+
+
+$title-font-color          :#0e2546;
+
+$input-placeholder         :#10365a;
+$input-border              :#10365a;
+$input-border-focus        :rgba(70,130,170,.5);
+
+
+
+
+
+
+
+
+
+$bg_color_base              :#0000FF;
+$bg-white                   :#fff;
+
+
+
+
+$input-placeholder-dark     :#0000FF;
+$input-border-dark          :#0000FF;
+
+
+
+
+$title-bg-color				:#ececed;
+$title-bg-darkcolor			:#d5d5d5;
+
+
+
+$link-font-color			:#414141;
+$blue-font-color			:#1f4088;
+
+

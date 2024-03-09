@@ -1,0 +1,114 @@
+.img-ratio {
+	display: block;
+    position: relative;
+    overflow: hidden;
+  
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+            -webkit-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        
+    }
+    &:after {
+        content: "";
+        display: block;
+    }
+    &:hover {
+        img {
+            -webkit-transform: scale3d(1.025, 1.025, 1);
+            transform: scale3d(1.025, 1.025, 1);
+        }
+    }
+    .in,
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    span {
+          }
+      
+    /*1:1*/
+    &.img-1-1 {
+        &:after {
+            padding-bottom: 100%;
+        }
+    }
+    /*4:3*/
+    &.img-4-3 {
+        &:after {
+              padding-bottom: 75%;
+        }
+    }
+    /*3:3*/
+    &.img-3-4 {
+        &:after {
+              padding-bottom: 133.32%;
+        }
+    }
+    /*3:2*/
+    &.img-3-2 {
+        &:after {
+              padding-bottom: 66.66%;
+        }
+    }
+    /*2:3*/
+    &.img-2-3 {
+        &:after {
+            padding-bottom: 150%;
+        }
+    }
+    /*2:3*/
+    &.img-16-9 {
+        &:after {
+            padding-bottom: 56.25%;
+        }
+    }
+    &.img-5-4{
+    	 &:after {
+          padding-bottom: 85%;
+        }
+    }
+
+    &.img-4-3-tablet{
+        &:after {
+              padding-bottom: 100%;
+         }
+    }
+    &.img-map{
+       &:after {
+            padding-bottom: 45%;
+        }  
+    }
+
+    @include M_Medium_Up{
+          &.img-map{
+           &:after {
+                padding-bottom: 40%;
+            }  
+        }
+    }
+     @include M_Large_Up{
+          &.img-map{
+           &:after {
+                padding-bottom: 30%;
+            }  
+        }
+    }
+     @include M_Medium_Up{
+         &.img-abs-right{
+            position: absolute;top: 50%; right: 0; /*width:44%;*/ transform: translate(0, -50%); height: 100%;
+        }
+         &.img-abs-left{
+            position: absolute;top: 50%; left: 0; /*width:44%;*/ transform: translate(0, -50%); height: 100%;
+        }
+    }
+}
+

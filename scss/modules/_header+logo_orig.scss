@@ -1,0 +1,205 @@
+/*
+* 
+* frontend dev : Farkas Imre
+*/
+/*
+* 
+* frontend dev : Farkas Imre
+*/
+
+.header{
+	margin-bottom: 40px;z-index:999; position: relative; margin-bottom: 10px;
+	
+	.h-in-stack{
+		z-index: 999; top: -200px; 
+	}
+	
+	.fixed-to-top{ 
+		background-color: #fff; position: fixed; top: 0; left:0; width: 100%;
+		.topnav{
+			display: none;
+		}
+		.navbar {
+			@include M_Large_Up{
+				padding:0 0  10px;
+
+			}
+		}
+	}
+
+	.navbar-brand{ 
+		padding:30px 15px 10px 0; margin:10px 0 0 0px; position: relative; overflow:hidden; z-index: 99;
+		width: 250px;
+		img{ width: 100% }
+		@include M_Medium_Up{
+		}
+		@include M_Large_Up{
+			width: 300px;padding:0 15px 0 0;
+		}
+	}
+
+	.topnav{
+		position: absolute; top:5px; right: 5px;
+	}
+}
+
+
+.navbar {
+	padding: 5px 0;
+	@include M_Large_Up{
+		@include anim(.2s);
+		padding: 30px 0;
+
+	}
+	.navbar-nav{
+		.nav-item{
+			.nav-link{
+				@include add_underline_on_hover ($cl-navbar-underine,100%,2px);
+				padding-bottom: 2px;
+				display: block;
+			}
+			.nav-btn{
+				border:2px solid #000; padding: 2px 15px;display: block;
+				&:hover{
+					text-decoration: none;
+				};
+			}
+			&.active{
+				.nav-link{
+					@include remove_underline_on_hover ($cl-navbar-underine,0,2px)
+				}
+			}
+		}
+		@include M_Large_Up{
+			padding-top:10px;
+			.nav-item{
+				+.nav-item{
+					padding-left: 20px;
+					@include M_Large_Up{
+						padding-left: 17px;
+					}
+					@include M_ExtraLarge_Up{
+						padding-left: 15px;
+					}
+					@include M_XXL_Up{
+						padding-left: 40px;
+					}
+				}
+
+			}
+		}
+		@include M_Large_Down{
+			padding-bottom: 15px;
+			.nav-item{
+				margin-bottom: 25px;
+				.nav-link{
+					text-align: center;
+					font-size: 1.8em;
+				}
+				.nav-btn{
+					margin: 0 auto; text-align: center; max-width: 180px;
+					font-size: 1.8em;
+				}
+			}
+		}
+	}
+
+
+	#menu-trigger {
+		border:none; padding:15px 10px; margin:0; border-radius:3px; position:absolute; right:5px; top:40px;z-index:999; outline:none;
+		.navbar-toggler-icon { 
+			display:block; width:30px; height:3px; position:relative;margin:0; border-radius: 2px;
+			&:before, 
+			&:after { content:''; width:100%; height:3px;position:absolute; @include anim(.2s); border-radius: 2px; }
+			&:before { top:-10px; left:4px; width: 34px;}
+			&:after { top:10px; left:4px; width: 34px;}
+		}
+		&.collapsed {
+			.navbar-toggler-icon{
+				background:#000;
+				&:before,
+				&:after{ -moz-transform:rotate(0deg); -webkit-transform:rotate(0deg); -o-transform:rotate(0deg); -ms-transform:rotate(0deg); transform:rotate(0deg); background-color: #000}
+				&:before{width: 30px; top:-9px!important; }
+				&:after{width: 30px; top:9px!important;background-color: #000}
+			}
+		}
+		.navbar-toggler-icon{ 
+			background:none;
+			&:before {top:0!important; background-color:#000; -moz-transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg); -ms-transform:rotate(-45deg); transform:rotate(-45deg) }
+			&:after { top:0!important; background-color:#000; -moz-transform:rotate(45deg); -webkit-transform:rotate(45deg); -o-transform:rotate(45deg); -ms-transform:rotate(45deg); transform:rotate(45deg) }
+		}
+		&:hover {
+			.navbar-toggler-icon:before { top:-8px; }
+			.navbar-toggler-icon:after { top:8px;  }
+		}
+	}
+}
+
+
+@include M_Large_Down{
+	.navbar-collapse{
+		
+		position: fixed; top: 0; left:-15px;  right: -15px; padding-top: 110px; background-color: #fff; min-height: 100%; z-index: 98;
+		
+		
+		&.collapsing {
+			height: 100% !important;
+			left: -100%;
+		}
+		&.show{
+			left: 0;
+			-webkit-transition: left 0.3s ease-in;        -o-transition: left 0.3s ease-in;        -moz-transition: left 0.3s ease-in;        transition: left 0.3s ease-in;		 
+		 }
+	}
+}
+
+
+
+/*
+
+
+.navbar{ padding:50px 0 30px;}
+
+.navbar-brand{ padding:0; max-width:95px;  position:absolute; top:24px; left:0; }
+	.navbar-brand img{ width:100%}
+	.navbar-light .navbar-nav .nav-link{ color:#404040; letter-spacing: .015em}
+
+navbar-expand-lg .navbar-nav .nav-link{ font-size: 17px;  color:#000;padding:12px 0 7px; letter-spacing:.0em; }
+.navbar-nav .nav-hasbtn .btn{min-width:123px; padding-left: 5px; padding-right: 5px; font-size: 16px; }
+
+#menu-trigger {border:none; padding:15px 10px; margin:0; border-radius:3px; position:absolute; right:-10px; top:24px;z-index:999; outline:none}
+	#menu-trigger .navbar-toggler-icon { display:block; width:32px; height:2px; position:relative;margin:0}
+	#menu-trigger .navbar-toggler-icon:before, 
+	#menu-trigger .navbar-toggler-icon:after { content:''; width:100%; height:2px;position:absolute}
+	#menu-trigger .navbar-toggler-icon:before { top:-10px; left:0}
+	#menu-trigger .navbar-toggler-icon:after { top:10px; left:0}
+	
+	#menu-trigger.collapsed span:before{ top:-9px!important; -moz-transform:rotate(0deg); -webkit-transform:rotate(0deg); -o-transform:rotate(0deg); -ms-transform:rotate(0deg); transform:rotate(0deg)}
+	#menu-trigger.collapsed span:after{ top:9px!important; -moz-transform:rotate(0deg); -webkit-transform:rotate(0deg); -o-transform:rotate(0deg); -ms-transform:rotate(0deg); transform:rotate(0deg)}
+	#menu-trigger.collapsed .navbar-toggler-icon	{background:#023a65}
+	#menu-trigger .navbar-toggler-icon{ background:none}
+	#menu-trigger .navbar-toggler-icon:before { top:0!important; background-color:#023a65; -moz-transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg); -ms-transform:rotate(-45deg); transform:rotate(-45deg) }
+	#menu-trigger .navbar-toggler-icon:after { top:0!important; background-color:#023a65; -moz-transform:rotate(45deg); -webkit-transform:rotate(45deg); -o-transform:rotate(45deg); -ms-transform:rotate(45deg); transform:rotate(45deg) }
+	#menu-trigger:hover .navbar-toggler-icon:before { top:-8px }	#menu-trigger:hover .navbar-toggler-icon:after { top:8px }
+
+
+
+.topnav{  font-size: 13px;}
+	.topnav .list-lang{padding-left: 58px;}
+	.topnav .lnk-top{ float: left ; color: inherit; }
+    .topnav .lnk-top.active{  }
+
+
+.min-h-logo{
+	min-height: 500px;
+	@include M_Medium_Up{
+		min-height: 780px;
+	}
+}
+
+
+
+*/
+.list-lang { list-style: none; float: right; }
+	.list-lang li{ display: inline-block; font-size: 14px; }
+	.list-lang a{color: inherit;  }

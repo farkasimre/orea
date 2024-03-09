@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'PP Eiko';
+    src: url('PPEiko-Light.woff2') format('woff2'),
+        url('PPEiko-Light.woff') format('woff'),
+        url('PPEiko-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Calibri';
+    src: url('Calibri-Light.woff2') format('woff2'),
+        url('Calibri-Light.woff') format('woff'),
+        url('Calibri-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Eiko';
+    src: url('PPEiko-Regular.woff2') format('woff2'),
+        url('PPEiko-Regular.woff') format('woff'),
+        url('PPEiko-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

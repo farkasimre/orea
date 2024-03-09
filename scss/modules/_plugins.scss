@@ -1,0 +1,72 @@
+.project-carousel{
+	@include M_Small_Up{
+		.owl-stage-outer{
+			padding: 3.5% 0 0;
+		}
+		.owl-item{
+			position:relative; z-index: 1; 
+			.elem-thumb-an-text{
+				padding-top: 20%;
+				width: 70%;
+		  		background-color: #fff;
+		  	}
+		  	&.active.center + .active{
+		  		.elem-thumb-an-text{
+		  			float:right;
+		  		}
+		  	}
+		}
+		 .elem-thumb-an-text{
+		  	@include anim(.5s);  
+		  }
+
+
+		.owl-item.active {
+		
+		  .elem-thumb-an-text{
+		  	font-size: .85em;left: 0%; position:relative; 
+		  }
+		}
+		.owl-item.active.center{
+			z-index: 2;
+		    .elem-thumb-an-text{
+		    	font-size: 1em; padding-top: 0;
+		    	width: 150%; left: -25%; 
+		    	
+		    }
+		}
+	}
+
+	.owl-nav {
+		
+		button{
+			 width: 12px; height: 22px;
+			&.owl-prev{
+				background:url("images/al.svg") no-repeat 50% 50%; ;
+			}
+			&.owl-next{
+				background:url("images/ar.svg") no-repeat 50% 50%; ;
+			}
+			span{
+				 display: none;
+			}
+		}
+	}
+}
+.image-carousel{
+	.owl-nav {
+		
+		button{
+			 width: 12px; height: 60px;
+			&.owl-prev{
+				background:url("images/al.svg") no-repeat 50% 50%; ;
+			}
+			&.owl-next{
+				background:url("images/ar.svg") no-repeat 50% 50%; ;
+			}
+			span{
+				 display: none;
+			}
+		}
+	}
+}

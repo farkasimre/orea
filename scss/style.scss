@@ -1,0 +1,80 @@
+@import "theme-variables/variables";
+
+
+$body-color: $base-body-color;
+
+
+$theme-colors: (
+    "primary":$cl-btn-primary,
+    "secondary": $cl-btn-secondary,
+    "light": $cl-btn-light,
+
+);
+
+$navbar-nav-link-padding-x:  0;
+
+$navbar-light-color:               $navbar-color;
+$navbar-light-hover-color:         $navbar-color;
+$navbar-light-active-color:        $navbar-color;
+$navbar-light-disabled-color:      $navbar-color;
+
+$border-radius:               0;
+$border-radius-lg:            0;
+$border-radius-sm:            0;
+
+
+$input-height:                48px;
+$input-placeholder-color:     $input-placeholder;
+$input-border-color:          $input-border;
+$input-border-radius:         0;
+$input-box-shadow:            none;
+$input-focus-box-shadow:      none;
+
+
+
+
+/* import only the necessary Bootstrap files */
+@import "node_modules/bootstrap/scss/functions"; 
+@import "node_modules/bootstrap/scss/variables";
+/* --- begin customization ---- */
+
+/* increase the width of the grid lg and xl breakpoints */
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1366px
+);
+/* increase container width for the wider lg and xl breakpoints */
+$container-max-widths: (
+  lg: 1050px,
+  xl: 1250px
+);
+/* --- end customization ------ */
+/* finally, import Bootstrap to set the changes! */
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/* purgecss start ignore */
+@import "plugins/animate";
+@import "plugins/swipebox";
+@import "plugins/lightslider";
+/* purgecss end ignore */
+
+/**
+Site main file
+*/
+/*theme sizes / colors/ fonts */
+
+@import "theme-variables/mixin";
+
+
+@import "modules/common",
+		"modules/header",
+    "modules/footer",
+    "modules/images",
+   "modules/blocks",
+   "modules/forms";
+

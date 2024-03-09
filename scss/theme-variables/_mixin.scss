@@ -1,0 +1,454 @@
+/* mobile*/
+@mixin  M_VerySmall_Down{	
+	 @media (max-width: #{389px}){
+		 @content;
+	}
+}
+@mixin  M_VerySmall_Up{ 
+   @media (min-width: #{390px}){
+     @content;
+  }
+}
+
+
+/* (landscape phones, 576px and up)*/
+@mixin  M_Small_Up{	
+	 @media (min-width: #{576px}){
+		 @content;
+	}
+}
+@mixin  M_Small_Down{	
+	 @media (max-width: #{575.98px}){
+		 @content;
+	}
+}
+
+/* (mobile and tablet)*/
+@mixin M_Small_to_Medium{
+	@media (min-width: #{576px}) and (max-width: #{767.98px}) {
+    	@content;
+  	}
+}
+@mixin M_Small_to_Large{
+	@media (min-width: #{576px}) and (max-width: #{991.98px}) {
+    	@content;
+  	}
+}
+
+
+/*(tablets, 768px and up)*/
+@mixin M_Medium_Up{	
+	 @media (min-width: #{768px}){
+		 @content;
+	}
+}
+@mixin M_Medium_Down{	
+	 @media (max-width: #{767.98px}){
+		 @content;
+	}
+}
+/* (tablet and desktop)*/
+@mixin M_Medium_to_Large{
+	@media (min-width: #{768px}) and (max-width: #{991.98px}) {
+    	@content;
+  	}
+}
+
+
+
+
+/*(desktops, 992px and up)*/
+@mixin M_Large_Up{	
+	 @media (min-width: #{992px}){
+		 @content;
+	}
+}
+/*below*/
+@mixin M_Large_Down{	
+	 @media (max-width: #{991.98px}){
+		 @content;
+	}
+}
+
+@mixin M_Large_to_ExtraLarge{
+	@media (min-width: #{992px}) and (max-width: #{1199.98px}) {
+    	@content;
+  	}
+}
+
+
+/*((large desktops, 1200px and up))*/
+@mixin M_ExtraLarge_Up{	
+	 @media (min-width: #{1200px}){
+		 @content;
+	}
+}
+@mixin M_ExtraLarge_Down{	
+	 @media (max-width: #{1199.98px}){
+		 @content;  
+	} 
+}
+/* (tablet and largedesktops)*/
+@mixin M_Medium_to_ExtraLarge{
+	@media (min-width: #{768px}) and (max-width: #{1199.98px}) {
+    	@content;
+  	}
+}
+
+@mixin M_XXL_Up{ 
+   @media (min-width: #{1500px}){
+     @content;
+  }
+}
+@mixin M_XXX_Up{ 
+   @media (min-width: #{2500px}){
+     @content;
+  }
+}
+
+
+
+/*  
+@mixin cover-background ()
+Creates a full width background image on an element. 
+
+-Parameters:
+--Required:
+$img-uri: URI of image you want to use as the background 
+
+--Optional:
+$background-top:  Defaults to "center - sets the "top" value of the background position
+$background-left: Defaults to "center - sets the "left" value of the background position.
+$background-attachment: Defaults to "fixed" - allows you to specify background attachment.
+
+*/
+
+@mixin cover-background() {
+ background-repeat:no-repeat;
+ background-position:50% 0;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  background-size: 100% auto;  
+/*@include M_Medium_Down{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+}*/
+
+}
+
+@mixin cover-background-full() {
+ background-repeat:no-repeat;
+ background-position:50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+
+
+}
+
+@mixin translatePos($x,$y){
+  -moz-transform: translate($x,$y);
+  -webkit-transform: translate($x,$y);
+  -o-transform: translate($x,$y);
+  -ms-transform: translate($x,$y);
+  transform: translate($x,$y);
+}
+
+/*@include box-shadow(0, 1px, 1px,1px , rgba(0, 0, 0, 0.5));*/
+@mixin box-shadow-item($value) {
+     -webkit-box-shadow:$value;
+     -moz-box-shadow:$value;
+     box-shadow:$value;
+}
+
+@mixin anim($time){
+//	webkit-transition: all $time ease-in; transition: all $time ease-in; cubic-bezier(.93,.1,.42,.91);
+
+	 -webkit-transition: all $time cubic-bezier(.5,0,0,1);
+    -moz-transition: all $time cubic-bezier(.5,0,0,1) ;
+    -o-transition: all $time cubic-bezier(.5,0,0,1) ;
+    transition: all $time cubic-bezier(.5,0,0,1) ;
+}
+
+
+@mixin anim_ease($time){
+//  webkit-transition: all $time ease-in; transition: all $time ease-in; cubic-bezier(.93,.1,.42,.91);
+
+   -webkit-transition: all $time linear;
+    -moz-transition: all $time linear ;
+    -o-transition: all $time linear ;
+    transition: all $time linear ;
+}
+@mixin underline_on_hover ($cl,$pos){
+  background-image: linear-gradient($cl, $cl); background-position: $pos 100%; background-repeat: no-repeat; background-size: 0% 2px; transition: background-size .3s; 
+  &:hover{
+     background-size: 100% 2px; text-decoration: none;
+  }
+}
+
+@mixin add_underline_on_hover ($cl,$pos,$xheight){
+  background-image: linear-gradient($cl, $cl); background-position: 0% 100%; background-repeat: no-repeat; background-size: 0 $xheight; transition: background-size .3s; 
+  white-space: nowrap;
+  &:hover{
+     background-size: $pos $xheight; text-decoration: none;
+  }
+}
+@mixin remove_underline_on_hover ($cl,$pos,$xheight){
+  background-image: linear-gradient($cl, $cl); background-position: 0% 100%; background-repeat: no-repeat; background-size: 100% $xheight; transition: background-size .3s; 
+ 
+  &:hover{
+     background-size: $pos $xheight; text-decoration: none;
+  }
+}
+
+@mixin topline_on ($cl,$pos,$xheight){
+  background-image: linear-gradient($cl, $cl); background-position: 0% 0%; background-repeat: no-repeat; background-size: 100% $xheight; transition: background-size .3s; 
+  white-space: nowrap;
+  &:hover{
+     background-size: $pos $xheight; text-decoration: none;
+  }
+}
+@mixin has_bg_color ($cl){ 
+  display: inline;/*padding-right: 20px; */ padding-bottom: 4px;
+  background-image: linear-gradient($cl, $cl); background-position: 20px 14px; background-repeat: no-repeat; background-size: 100% 100%;
+  -webkit-box-shadow: 35px 7px 0px -7px $cl;
+-moz-box-shadow: 35px 7px 0px -7px $cl;
+box-shadow: 35px 7px 0px -7px $cl;
+
+}
+
+@mixin color-placeholder($element, $color: $cl-input-gray ) {
+	#{$element}::-webkit-input-placeholder {
+		color: $color;
+	}
+
+	#{$element}:-moz-placeholder {
+		color: $color;
+	}
+
+	#{$element}::-moz-placeholder {
+		color: $color;
+	}
+
+	#{$element}:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin placeholder {
+  &:-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+
+
+
+//@include horizontal-gradient(#71c005, #88dd06);
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+  /* IE10+ */
+  background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Standard */
+  background: linear-gradient(to right, $from 0%, $to $stop);
+
+}
+
+
+
+// --------------------------------------------------
+// Flexbox SASS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// --------------------------------------------------
+
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+      -ms-flex: $values;
+          flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+     -moz-box-ordinal-group: $val;     
+         -ms-flex-order: $val;     
+          -webkit-order: $val;  
+            order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+     -moz-flex-grow: $grow;
+      -ms-flex-grow: $grow;
+          flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+     -moz-flex-shrink: $shrink;
+      -ms-flex-shrink: $shrink;
+          flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width> 
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+     -moz-flex-basis: $width;
+      -ms-flex-basis: $width;
+          flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+     -moz-align-content: $align;
+      -ms-align-content: $align;
+          align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+       -ms-flex-align: $align;
+          align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+     -moz-align-self: $align;
+      -ms-align-self: $align;
+          align-self: $align;
+}
+
+
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+/*sampel*/
+/*a {
+  @include transition(background-color 1s .5s, color 2s);
+}
+*/
